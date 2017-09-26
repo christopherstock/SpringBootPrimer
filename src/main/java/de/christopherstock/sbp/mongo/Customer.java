@@ -2,6 +2,7 @@
     package de.christopherstock.sbp.mongo;
 
     import  org.springframework.data.annotation.Id;
+    import  java.util.*;
 
     public class Customer
     {
@@ -12,18 +13,28 @@
 
         public String lastName;
 
-        public Customer() {}
+        public Date createDate;
 
-        public Customer(String firstName, String lastName) {
-            this.firstName = firstName;
-            this.lastName = lastName;
+        public Customer()
+        {
+        }
+
+        public Customer( String firstName, String lastName, Date createDate )
+        {
+            this.firstName  = firstName;
+            this.lastName   = lastName;
+            this.createDate = createDate;
         }
 
         @Override
         public String toString()
         {
             return String.format(
-                    "Customer[id=%s, firstName='%s', lastName='%s']",
-                    id, firstName, lastName);
+                "Customer[id=%s, firstName='%s', lastName='%s', createDate='%s']",
+                id,
+                firstName,
+                lastName,
+                createDate.toString()
+            );
         }
     }

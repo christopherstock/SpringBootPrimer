@@ -2,6 +2,7 @@
     package de.christopherstock.sbp.mongo;
 
     import  java.util.*;
+    import java.util.concurrent.*;
 
     /*******************************************************************************************************************
     *   Tests the MongoDB database management system via Spring Framework.
@@ -54,8 +55,24 @@
             repository.deleteAll();
 
             // save a couple of customers
-            repository.save( new Customer( "Alice", "Smith" ) );
-            repository.save( new Customer( "Bob",   "Smith" ) );
+            repository.save
+            (
+                new Customer
+                (
+                    "Alice",
+                    "Smith",
+                    new Date( System.currentTimeMillis() - TimeUnit.DAYS.toMillis( 15 ) )
+                )
+            );
+            repository.save
+            (
+                new Customer
+                (
+                    "Bob",
+                    "Smith",
+                    new Date( System.currentTimeMillis() - TimeUnit.DAYS.toMillis( 30 ) )
+                )
+            );
 
             // fetch all customers
             System.out.println("Customers found with findAll():");
