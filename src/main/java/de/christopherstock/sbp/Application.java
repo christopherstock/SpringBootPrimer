@@ -10,7 +10,7 @@
 
     @SpringBootApplication
     @EnableScheduling
-    public class Application
+    public class Application // extends AbstractMongoConfiguration
     {
         /***************************************************************************************************************
         *   The main method being invoked when the Spring Boot Framework is started.
