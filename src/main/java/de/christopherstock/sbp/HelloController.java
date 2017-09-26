@@ -1,6 +1,7 @@
 
     package de.christopherstock.sbp;
 
+    import  de.christopherstock.sbp.example.*;
     import  org.springframework.web.bind.annotation.*;
 
     @RestController
@@ -22,6 +23,9 @@
         public String timerAction()
         {
             System.out.println( "Invoking timer test action." );
+
+            TimerExample te = new TimerExample();
+            te.startTimer();
 
             return "Timer Test action!";
         }
