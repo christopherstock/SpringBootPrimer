@@ -1,5 +1,5 @@
 
-    package hello;
+    package de.christopherstock.sbp;
 
     import  java.util.Arrays;
     import  org.springframework.boot.*;

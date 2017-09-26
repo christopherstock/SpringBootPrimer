@@ -1,5 +1,5 @@
 
-    package hello;
+    package de.christopherstock.sbp;
 
     import  org.springframework.web.bind.annotation.*;
 
@@ -25,8 +25,4 @@
 
             return "Timer Test action!";
         }
-
-
-
-
     }
