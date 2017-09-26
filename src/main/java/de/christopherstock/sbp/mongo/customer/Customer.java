@@ -1,5 +1,5 @@
 
-    package de.christopherstock.sbp.mongo;
+    package de.christopherstock.sbp.mongo.customer;
 
     import  org.springframework.data.annotation.Id;
     import  java.util.*;

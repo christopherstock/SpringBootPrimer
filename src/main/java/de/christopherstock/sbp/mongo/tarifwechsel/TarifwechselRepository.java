@@ -1,5 +1,5 @@
 
-    package de.christopherstock.sbp.mongo;
+    package de.christopherstock.sbp.mongo.tarifwechsel;
 
     import  org.springframework.data.mongodb.repository.*;
 

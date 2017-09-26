@@ -1,9 +1,8 @@
 
-    package de.christopherstock.sbp.mongo;
+    package de.christopherstock.sbp.mongo.customer;
 
     import  java.util.*;
     import  org.springframework.data.mongodb.repository.*;
-    import  org.springframework.data.repository.query.*;
 
     public interface CustomerRepository extends MongoRepository<Customer, String>
     {
