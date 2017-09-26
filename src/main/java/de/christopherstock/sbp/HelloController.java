@@ -3,11 +3,15 @@
 
     import  de.christopherstock.sbp.mongo.*;
     import  de.christopherstock.sbp.timer.*;
+    import  org.springframework.beans.factory.annotation.*;
     import  org.springframework.web.bind.annotation.*;
 
     @RestController
     public class HelloController
     {
+        @Autowired
+        TarifwechselRepository repository;
+
         @RequestMapping( "/" )
         public String index()
         {
@@ -48,7 +52,7 @@
             System.out.println( "Invoking mongo DB action via Spring Boot framework." );
 
             MongoDbSpring mongo = new MongoDbSpring();
-            mongo.testMongoDbSpring();
+            mongo.testMongoDbSpring( this.repository );
 
             return "MongoDB Spring Boot framework action!";
         }

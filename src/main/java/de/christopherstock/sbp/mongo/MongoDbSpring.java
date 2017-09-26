@@ -14,7 +14,7 @@
         /***************************************************************************************************************
         *   Tests the MongoDB via Spring Framework.
         ***************************************************************************************************************/
-        public void testMongoDbSpring()
+        public void testMongoDbSpring( TarifwechselRepository repository )
         {
             System.out.println
             (
@@ -24,11 +24,17 @@
                 +   ".testMongoDbSpring() being invoked"
             );
 
+            TarifwechselEntity test = repository.getById( "1" );
 
+            System.out.println( "Entity read: " + test );
 
+            System.out.println( "Repository count: " + repository.count() );
 
-
-
-
+            List<TarifwechselEntity> entities = repository.findAll();
+            for ( TarifwechselEntity entity : entities )
+            {
+                System.out.println( "" );
+                System.out.println( " Entity Nachname: " + entity.getNachname() );
+            }
         }
     }
