@@ -1,7 +1,8 @@
 
     package de.christopherstock.sbp;
 
-    import  de.christopherstock.sbp.example.*;
+    import de.christopherstock.sbp.mongo.*;
+    import  de.christopherstock.sbp.timer.*;
     import  org.springframework.web.bind.annotation.*;
 
     @RestController
@@ -24,20 +25,20 @@
         {
             System.out.println( "Invoking timer test action." );
 
-            TimerExample te = new TimerExample();
+            TimerSimple te = new TimerSimple();
             te.startTimer();
 
             return "Timer Test action!";
         }
 
-        @RequestMapping( "/mongo" )
-        public String mongoAction()
+        @RequestMapping( "/mongo/simple" )
+        public String mongoSimpleAction()
         {
             System.out.println( "Invoking mongo DB action." );
 
-            MongoDb mongo = new MongoDb();
+            MongoDbSimple mongo = new MongoDbSimple();
             mongo.testMongoDb();
 
-            return "MongoDB action!";
+            return "MongoDB simple action!";
         }
     }
