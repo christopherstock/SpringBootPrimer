@@ -115,5 +115,10 @@
                     System.out.println( customer );
                 }
             }
+
+            // test
+
+            // List<Customer> allCustomersTest = repository.getOutdated( new Date() );
+
         }
     }

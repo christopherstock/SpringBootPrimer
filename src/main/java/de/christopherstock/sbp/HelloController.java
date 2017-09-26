@@ -2,8 +2,8 @@
     package de.christopherstock.sbp;
 
     import  de.christopherstock.sbp.mongo.*;
-    import de.christopherstock.sbp.mongo.customer.*;
-    import de.christopherstock.sbp.mongo.tarifwechsel.*;
+    import  de.christopherstock.sbp.mongo.customer.*;
+    import  de.christopherstock.sbp.mongo.tarifwechsel.*;
     import  de.christopherstock.sbp.timer.*;
     import  org.springframework.beans.factory.annotation.*;
     import  org.springframework.web.bind.annotation.*;
