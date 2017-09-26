@@ -75,6 +75,7 @@
             );
 
             // fetch all customers
+            System.out.println( "" );
             System.out.println("Customers found with findAll():");
             System.out.println("-------------------------------");
 
@@ -85,15 +86,31 @@
             System.out.println();
 
             // fetch an individual customer
+            System.out.println( "" );
             System.out.println( "Customer found with findByFirstName('Alice'):" );
             System.out.println( "--------------------------------" );
             System.out.println( repository.findByFirstName( "Alice" ) );
 
+            System.out.println( "" );
             System.out.println( "Customers found with findByLastName('Smith'):" );
             System.out.println( "--------------------------------" );
             for ( Customer customer : repository.findByLastName( "Smith" ) )
             {
                 System.out.println( customer );
+            }
+
+            System.out.println( "" );
+            System.out.println( "OUTDATED Customers (older than 20 days):" );
+            System.out.println( "--------------------------------" );
+
+            List<Customer> allCustomers = repository.findAll();
+
+            for ( Customer customer : allCustomers )
+            {
+                if ( customer.createDate.getTime() < System.currentTimeMillis() - TimeUnit.DAYS.toMillis( 20 ) )
+                {
+                    System.out.println( customer );
+                }
             }
         }
     }

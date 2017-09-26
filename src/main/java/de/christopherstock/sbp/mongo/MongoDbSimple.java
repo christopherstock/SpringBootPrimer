@@ -73,7 +73,7 @@
             System.out.println( "===== findOutdatedTuples() being invoked =====" );
             System.out.println( "" );
 
-            // create search query TODO to separate method!
+            // create search query
             BasicDBObject searchQuery = this.createOutdateSearchQuery();
 
             System.out.println( "" );
