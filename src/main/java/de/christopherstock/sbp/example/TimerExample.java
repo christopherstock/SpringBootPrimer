@@ -14,9 +14,10 @@
         ***************************************************************************************************************/
         public void startTimer()
         {
-            // this.startPeriodicScheduler();
+            System.out.println( new Date().toString() + " " + TimerExample.class + ".startTimer() being invoked." );
 
-            this.startCalendarScheduler();
+            // this.startPeriodicScheduler();
+            // this.startCalendarScheduler();
         }
 
         /***************************************************************************************************************

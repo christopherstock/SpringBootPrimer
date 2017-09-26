@@ -6,12 +6,14 @@
     import  org.springframework.boot.autoconfigure.*;
     import  org.springframework.context.*;
     import  org.springframework.context.annotation.*;
+    import  org.springframework.scheduling.annotation.*;
 
     @SpringBootApplication
+    @EnableScheduling
     public class Application
     {
         /***************************************************************************************************************
-        *   TODO Colorize and create IJ Module.
+        *   The main method being invoked when the Spring Boot Framework is started.
         ***************************************************************************************************************/
         public static void main( String[] args )
         {
