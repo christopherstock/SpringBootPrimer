@@ -1,8 +1,10 @@
 
     package de.christopherstock.sbp.mongo;
 
+    import com.mongodb.*;
     import de.christopherstock.sbp.mongo.customer.*;
     import de.christopherstock.sbp.mongo.tarifwechsel.*;
+    import org.springframework.data.domain.*;
 
     import  java.util.*;
     import java.util.concurrent.*;
@@ -115,6 +117,22 @@
                     System.out.println( customer );
                 }
             }
+
+            System.out.println( "" );
+            System.out.println( "NOT-OUTDATED Customers (younger than 20 days):" );
+            System.out.println( "--------------------------------" );
+/*
+            BasicDBObject searchQuery = new BasicDBObject();
+            searchQuery.put
+            (
+                "createDate",
+                new BasicDBObject( "$gt", System.currentTimeMillis() - TimeUnit.DAYS.toMillis( 20 ) )
+            );
+
+            Example<S> test = new Example<S>();
+
+            List<Customer> allCustomers2 = repository.findAll( test );
+*/
 
             // test
 
