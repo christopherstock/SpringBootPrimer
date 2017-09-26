@@ -29,4 +29,15 @@
 
             return "Timer Test action!";
         }
+
+        @RequestMapping( "/mongo" )
+        public String mongoAction()
+        {
+            System.out.println( "Invoking mongo DB action." );
+
+            MongoDb mongo = new MongoDb();
+            mongo.testMongoDb();
+
+            return "MongoDB action!";
+        }
     }
