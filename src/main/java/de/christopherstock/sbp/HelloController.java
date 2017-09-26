@@ -10,7 +10,10 @@
     public class HelloController
     {
         @Autowired
-        TarifwechselRepository repository;
+        TarifwechselRepository tarifwechselRepository;
+
+        @Autowired
+        CustomerRepository customerRepository;
 
         @RequestMapping( "/" )
         public String index()
@@ -46,14 +49,25 @@
             return "MongoDB simple action!";
         }
 
-        @RequestMapping( "/mongo/spring" )
-        public String mongoSpringAction()
+        @RequestMapping( "/mongo/spring1" )
+        public String mongoSpringAction1()
         {
-            System.out.println( "Invoking mongo DB action via Spring Boot framework." );
+            System.out.println( "Invoking mongo DB action 1 via Spring Boot framework." );
 
             MongoDbSpring mongo = new MongoDbSpring();
-            mongo.testMongoDbSpring( this.repository );
+            mongo.testMongoDbSpring1( this.tarifwechselRepository );
 
-            return "MongoDB Spring Boot framework action!";
+            return "MongoDB Spring Boot framework action 1!";
+        }
+
+        @RequestMapping( "/mongo/spring2" )
+        public String mongoSpringAction2()
+        {
+            System.out.println( "Invoking mongo DB action 2 via Spring Boot framework." );
+
+            MongoDbSpring mongo = new MongoDbSpring();
+            mongo.testMongoDbSpring2( this.customerRepository );
+
+            return "MongoDB Spring Boot framework action 2!";
         }
     }

@@ -12,16 +12,16 @@
     public class MongoDbSpring
     {
         /***************************************************************************************************************
-        *   Tests the MongoDB via Spring Framework.
+        *   Tests the MongoDB 'TarifwechselRepository' via Spring Framework.
         ***************************************************************************************************************/
-        public void testMongoDbSpring( TarifwechselRepository repository )
+        public void testMongoDbSpring1( TarifwechselRepository repository )
         {
             System.out.println
             (
                     new Date().toString()
                 +   " "
                 +   MongoDbSpring.class
-                +   ".testMongoDbSpring() being invoked"
+                +   ".testMongoDbSpring1() being invoked"
             );
 
             TarifwechselEntity test = repository.getById( "1" );
@@ -35,6 +35,48 @@
             {
                 System.out.println( "" );
                 System.out.println( " Entity Nachname: " + entity.getNachname() );
+            }
+        }
+
+        /***************************************************************************************************************
+        *   Tests the MongoDB 'CustomerRepository' via Spring Framework.
+        ***************************************************************************************************************/
+        public void testMongoDbSpring2( CustomerRepository repository )
+        {
+            System.out.println
+            (
+                    new Date().toString()
+                +   " "
+                +   MongoDbSpring.class
+                +   ".testMongoDbSpring2() being invoked"
+            );
+
+            repository.deleteAll();
+
+            // save a couple of customers
+            repository.save( new Customer( "Alice", "Smith" ) );
+            repository.save( new Customer( "Bob",   "Smith" ) );
+
+            // fetch all customers
+            System.out.println("Customers found with findAll():");
+            System.out.println("-------------------------------");
+
+            for ( Customer customer : repository.findAll() )
+            {
+                System.out.println(customer);
+            }
+            System.out.println();
+
+            // fetch an individual customer
+            System.out.println( "Customer found with findByFirstName('Alice'):" );
+            System.out.println( "--------------------------------" );
+            System.out.println( repository.findByFirstName( "Alice" ) );
+
+            System.out.println( "Customers found with findByLastName('Smith'):" );
+            System.out.println( "--------------------------------" );
+            for ( Customer customer : repository.findByLastName( "Smith" ) )
+            {
+                System.out.println( customer );
             }
         }
     }
