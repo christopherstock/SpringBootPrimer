@@ -10,8 +10,6 @@
     import  org.springframework.boot.test.context.*;
     import  org.springframework.test.context.junit4.*;
 
-    import static org.assertj.core.api.Assertions.*;
-
     /*******************************************************************************************************************
     *   Tests the MongoDB database management system via Spring Framework.
     *
@@ -31,6 +29,6 @@
         {
             List<Customer> testCustomer = this.customerRepository.findByLastName( "Smith" );
 
-            assertThat( testCustomer.size() ).isEqualTo( 2 );
+            Assert.assertEquals( 2, testCustomer.size() );
         }
     }
